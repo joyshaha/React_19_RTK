@@ -4,7 +4,7 @@ import {
   useGetPodcastQuery,
   useDeletePodcastMutation,
 } from "../../features/api/apiSlice";
-import Loading from "../loading";
+import Loading from "../../components/Loading";
 import { Link, useNavigate } from "react-router-dom";
 
 function PodcastDetails() {
