@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
-  // import ProtectedLayout from "../layout/ProtectedLayout";
-  // import UnProtectedLayout from "../layout/UnProtectedlayout";
-import PrivateLayout from "../layout/auth/Privatelayout";
+// import ProtectedLayout from "../layout/ProtectedLayout";
+// import UnProtectedLayout from "../layout/UnProtectedlayout";
+import PrivateLayout from "../layout/auth/PrivateLayout";
 import PublicLayout from "../layout/auth/PublicLayout";
 
 // import SignIn from "../pages/SignIn";
@@ -10,19 +10,19 @@ import PublicLayout from "../layout/auth/PublicLayout";
 import Login from "../pages/onboard/Login";
 import Register from "../pages/onboard/Register";
 
-import MainLayout from "../layout/MainLayout";
-import Home from "../pages/Home";
-import PostsPage from "../pages/PostsPage";
-import VideosPage from "../pages/VideosPage";
-import VideoDetails from "../components/Video/VideoDetails";
-import List from "../pages/List";
-import About from "../pages/About";
-import NotFound from "../pages/NotFound";
-import TransactionsPage from "../pages/TransactionsPage";
-import PodcastsPage from "../pages/PodcastsPage";
-import PodcastForm from "../components/Podcast/PodcastForm";
 import PodcastDetails from "../components/Podcast/PodcastDetails";
+import PodcastForm from "../components/Podcast/PodcastForm";
+import VideoDetails from "../components/Video/VideoDetails";
+import MainLayout from "../layout/MainLayout";
+import About from "../pages/About";
 import Basic from "../pages/Basic";
+import Home from "../pages/Home";
+import List from "../pages/List";
+import NotFound from "../pages/NotFound";
+import PodcastsPage from "../pages/PodcastsPage";
+import PostsPage from "../pages/PostsPage";
+import TransactionsPage from "../pages/TransactionsPage";
+import VideosPage from "../pages/VideosPage";
 // import PrivateRoute from "../components/PrivateRoute";
 
 // export const router = createBrowserRouter([
