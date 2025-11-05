@@ -82,9 +82,13 @@ function PostsPage() {
             )}
             {posts.posts.length > 0 && (
               <ul>
-                {posts.posts.map((post) => (
-                  <li key={post.id}>
-                    {post?.id} - {post?.title}
+                {posts.posts.map((post, index) => (
+                  <li
+                    key={post?._id}
+                    className="text-sm text-gray-500 flex items-center gap-2"
+                  >
+                    <span className="text-black ">{index + 1}</span> -{" "}
+                    <span className="text-black font-medium">{post?.title}</span>
                   </li>
                 ))}
               </ul>
