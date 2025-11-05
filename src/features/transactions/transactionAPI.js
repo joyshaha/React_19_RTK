@@ -1,0 +1,21 @@
+import axiosInstance from '../../utils/axios';
+
+export const getTransactions = async () => {
+    const response = await axiosInstance.get('/transactions');
+    return response.data;
+};
+
+export const addTransaction = async (transaction) => {
+    const response = await axiosInstance.post('/transactions', transaction);
+    return response;
+};
+
+export const updateTransaction = async (id, transaction) => {
+    const response = await axiosInstance.put(`/transactions/${id}`, transaction);
+    return response.data;
+};
+
+export const deleteTransaction = async (id) => {
+    const response = await axiosInstance.delete(`/transactions/${id}`);
+    return response.data;
+};
