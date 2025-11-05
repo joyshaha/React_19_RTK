@@ -1,83 +1,40 @@
-# ========================
-# Node / Express Backend
-# ========================
-
-# Node modules
-node_modules/
-
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# Dependency directories
+node_modules/
 
-# Coverage
-coverage/
-.nyc_output/
-
-# Build / release directories
-build/
+# Build output
 dist/
+dist-ssr/
+*.local
 
-# dotenv environment variables
-.env
-.env.local
-.env.*.local
-
-# Optional npm cache directory
-.npm/
-
-# ESLint cache
-.eslintcache
-
-# Grunt intermediate storage
-.grunt/
-
-# Compiled binary addons
-build/Release/
-
-# IDEs
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# MacOS
+# Editor & OS files
 .DS_Store
+Thumbs.db
 
-# REPL history
-.node_repl_history
+# Optional caches
+.cache/
+.vite/
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*
 
-# Output of 'npm pack'
-*.tgz
+# Environment variables
+.env
+.env.*
+!.env.example
 
-# ========================
-# React Frontend
-# ========================
-
-# Node modules for frontend (if in a separate folder)
-frontend/node_modules/
-
-# React build output
-frontend/build/
-frontend/dist/
-
-# Local env files for frontend
-frontend/.env
-frontend/.env.local
-frontend/.env.*.local
-
-# VSCode settings for frontend
-frontend/.vscode/
-
-# npm logs (frontend)
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+# IDE & project files
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
