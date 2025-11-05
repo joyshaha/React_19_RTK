@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import simple from "../../assets/simple.jpg";
 import { useRegisterMutation } from "../../features/auth/authApi";
 
-export default function SignUp() {
+export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");

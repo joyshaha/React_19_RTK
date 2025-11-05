@@ -44,6 +44,7 @@ const authApi = apiSlice.injectEndpoints({
           dispatch(logIn({ token: data.token, username: data.username }));
         } catch (error) {
           console.error("Login failed:", error);
+          window.location.href = "/signin";
         }
       },
     }),

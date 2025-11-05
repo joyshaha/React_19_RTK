@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import simple from "../../assets/simple.jpg";
 import { useLoginMutation } from "../../features/auth/authApi";
 
-export default function SignIn() {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
