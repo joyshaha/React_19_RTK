@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchVideo } from "../../features/videos/videoSlice";
 import { useEffect } from "react";
-import Loading from "../loading";
+import Loading from "../Loading"; 
 
 function VideoDetails() {
   const { id } = useParams();

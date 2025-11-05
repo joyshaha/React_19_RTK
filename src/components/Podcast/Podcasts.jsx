@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetPodcastsQuery } from "../../features/api/apiSlice";
-import Loading from "../loading";
+import Loading from "../Loading"; 
 import Podcast from "./Podcast";
 
 function Podcasts() {

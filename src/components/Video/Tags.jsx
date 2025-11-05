@@ -3,7 +3,7 @@ import Tag from "./Tag";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTags } from "../../features/videos/tagsSlice";
 import { useEffect } from "react";
-import Loading from "../loading";
+import Loading from "../Loading"; 
 
 function Tags() {
   const { tags, isLoading, isError, error } = useSelector(

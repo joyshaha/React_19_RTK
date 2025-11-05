@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchVideos } from "../../features/videos/videosSlice";
 
 import Video from "./Video";
-import Loading from "../loading";
+import Loading from "../Loading"; 
 
 function Videos() {
   const { videos, isLoading, isError, error } = useSelector(
