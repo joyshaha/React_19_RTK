@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {
   useGetPodcastQuery,
   useDeletePodcastMutation,
-} from "../../features/api/apiSlice";
+} from "../../features/podcasts/podcastApi";
 import Loading from "../Loading";
 import { Link, useNavigate } from "react-router-dom";
 

@@ -21,6 +21,7 @@ const authApi = apiSlice.injectEndpoints({
           // dispatch the logIn action with the data
           dispatch(logIn({ token: data.token, username: data.username }));
         } catch (error) {
+          // do nothing
           console.error("Registration failed:", error);
         }
       },

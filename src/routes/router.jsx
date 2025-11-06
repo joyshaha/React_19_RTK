@@ -57,21 +57,26 @@ import VideosPage from "../pages/VideosPage";
 const router = createBrowserRouter([
   {
     path: "/",
+    // element: <ProtectedLayout />,
     element: <PrivateLayout />,
     children: [
       {
         element: <MainLayout />,
         children: [
           { index: true, element: <Home /> },
+          // redux thunk
           { path: "list", element: <List /> },
           { path: "redux-thunk", element: <PostsPage /> },
+          // rtk
           { path: "videos", element: <VideosPage /> },
           { path: "video/:id", element: <VideoDetails /> },
           { path: "transactions", element: <TransactionsPage /> },
+          // rtk query
           { path: "podcasts", element: <PodcastsPage /> },
           { path: "podcasts/add", element: <PodcastForm edit={false} /> },
           { path: "podcast/:id", element: <PodcastDetails /> },
           { path: "podcasts/edit/:id", element: <PodcastForm edit={true} /> },
+          // general redux
           { path: "about", element: <About /> },
         ],
       },
@@ -79,65 +84,30 @@ const router = createBrowserRouter([
   },
   {
     path: "/signin",
+    // element: <UnProtectedLayout />,
     element: <PublicLayout />,
-    children: [{ index: true, element: <Login /> }],
+    children: [
+      // { index: true, element: <SignIn /> },
+      { index: true, element: <Login /> },
+    ],
+
   },
   {
     path: "/signup",
+    // element: <UnProtectedLayout />,
     element: <PublicLayout />,
-    children: [{ index: true, element: <Register /> }],
+    children: [
+      // { index: true, element: <SignUp /> },
+      { index: true, element: <Register /> },
+    ],
   },
   {
     path: "/basic",
+    // element: <ProtectedLayout />,
     element: <PrivateLayout />,
     children: [{ path: "", element: <Basic /> }],
   },
   { path: "*", element: <NotFound /> },
 ]);
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <ProtectedLayout />,
-//     children: [
-//       {
-//         element: <MainLayout />,
-//         children: [
-//           { index: true, element: <Home /> },
-//           // redux thunk
-//           { path: "list", element: <List /> },
-//           { path: "redux-thunk", element: <PostsPage /> },
-//           // rtk
-//           { path: "videos", element: <VideosPage /> },
-//           { path: "video/:id", element: <VideoDetails /> },
-//           { path: "transactions", element: <TransactionsPage /> },
-//           // rtk query
-//           { path: "podcasts", element: <PodcastsPage /> },
-//           { path: "podcasts/add", element: <PodcastForm edit={false} /> },
-//           { path: "podcast/:id", element: <PodcastDetails /> },
-//           { path: "podcasts/edit/:id", element: <PodcastForm edit={true} /> },
-//           // general redux
-//           { path: "about", element: <About /> },
-//         ],
-//       },
-//     ],
-//   },
-//   {
-//     path: "/signin",
-//     element: <UnProtectedLayout />,
-//     children: [{ index: true, element: <SignIn /> }],
-//   },
-//   {
-//     path: "/signup",
-//     element: <UnProtectedLayout />,
-//     children: [{ index: true, element: <SignUp /> }],
-//   },
-//   {
-//     path: "/basic",
-//     element: <ProtectedLayout />,
-//     children: [{ path: "", element: <Basic /> }],
-//   },
-//   { path: "*", element: <NotFound /> },
-// ]);
 
 export default router;

@@ -4,7 +4,7 @@ import {
   useAddPodcastMutation,
   useGetPodcastQuery,
   useUpdatePodcastMutation,
-} from "../../features/api/apiSlice";
+} from "../../features/podcasts/podcastApi";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 function PodcastForm({ edit = false }) {
