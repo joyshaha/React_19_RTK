@@ -1,8 +1,8 @@
 import { RouterProvider } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { useEffect } from "react";
 // import { signIn } from "./features/auth/authSlice";
-import { logIn } from "./features/auth/authSlice";
+// import { logIn } from "./features/auth/authSlice";
 
 // import MainLayout from "./layout/MainLayout";
 // import ProtectedLayout from "./layout/ProtectedLayout";
@@ -12,21 +12,26 @@ import { logIn } from "./features/auth/authSlice";
 // import SignIn from "./pages/SignIn";
 // import SignUp from "./pages/SignUp";
 import router from "./routes/router";
+import useAuthCheck from "./hooks/useAuthCheck";
 
 
 export default function App() {
-  const dispatch = useDispatch();
-  // Auto-load user from localStorage into Redux
-  useEffect(() => {
-    const authUser = localStorage?.getItem("authUser");
-    if (authUser) {
-      const auth = JSON.parse(authUser);
-      if (auth?.token && auth?.username) {
-        dispatch(logIn({ token: auth.token, username: auth.username }));
-      }
-    }
-  }, [dispatch]);
-  
+  // const dispatch = useDispatch();
+  // // Auto-load user from localStorage into Redux
+  // useEffect(() => {
+  //   const authUser = localStorage?.getItem("authUser");
+  //   if (authUser) {
+  //     const auth = JSON.parse(authUser);
+  //     if (auth?.token && auth?.username) {
+  //       dispatch(logIn({ token: auth.token, username: auth.username }));
+  //     }
+  //   }
+  // }, [dispatch]);
+
+  const authChecked = useAuthCheck();
+  if (!authChecked) {
+    return <div className="flex justify-center items-center h-screen">Auth checking...</div>;
+  }
   return <RouterProvider router={router} />;
 }
 

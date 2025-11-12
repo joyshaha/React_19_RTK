@@ -18,8 +18,8 @@ function Podcasts() {
   if (isLoading) content = <Loading />;
   if (!isLoading && isError)
     content = (
-      <div className="text-center text-lg text-red-500">
-        Error: {error ? error.status : "Unknown error"}
+      <div className="  text-center text-lg text-red-500">
+        Error: {error ? `${error.status} - ${error?.data?.message}` : "Unknown error"}
       </div>
     );
   if (!isLoading && !isError && podcasts?.length === 0)
@@ -27,11 +27,15 @@ function Podcasts() {
       <div className="text-center text-2xl font-bold">No podcasts found</div>
     );
   if (!isLoading && !isError && podcasts?.length > 0)
-    content = podcasts.map((podcast) => (
-      <Podcast key={podcast._id} podcast={podcast} />
-    ));
+    content = (
+      <div className="grid grid-cols-4 gap-3">
+        {podcasts.map((podcast) => (
+          <Podcast key={podcast._id} podcast={podcast} />
+        ))}
+      </div>
+    );
 
-  return <div className="grid grid-cols-4 gap-3">{content}</div>;
+  return content;
 }
 
 export default Podcasts;

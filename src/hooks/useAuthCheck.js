@@ -16,6 +16,10 @@ function useAuthCheck() {
     }
     // Always set authChecked to true after checking, whether auth exists or not
     setAuthChecked(true);
+    // TODO: remove this after testing
+    // setTimeout(() => {
+    //   setAuthChecked(true);
+    // }, 1000);
   }, [dispatch]);
   return authChecked;
 }

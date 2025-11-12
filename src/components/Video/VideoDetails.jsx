@@ -11,6 +11,7 @@ function VideoDetails() {
   const { video, isLoading, isError, error } = useSelector(
     (state) => state.video
   );
+  let imageUrl = "https://dt-sample-buck.s3.ca-central-1.amazonaws.com/Admin/Modal/9773310-1440948-7.png"
 
   useEffect(() => {
     dispatch(fetchVideo(id));
@@ -34,7 +35,7 @@ function VideoDetails() {
           <h1 className="text-2xl font-bold">Video Details</h1>
           <img
             className="w-full h-full object-cover rounded-md mb-2"
-            src="https://picsum.photos/200/200"
+            src={imageUrl || "https://picsum.photos/200/200"}
             alt="video"
           />
           <div className="flex flex-col gap-2">
@@ -51,7 +52,7 @@ function VideoDetails() {
           <div className="flex justify-between items-center gap-4">
             <img
               className="w-full h-full object-cover rounded-[50%] mb-2"
-              src="https://picsum.photos/200/200"
+              src={imageUrl || "https://picsum.photos/200/200"}
               alt="video"
             />
             <div className="flex flex-col gap-2">

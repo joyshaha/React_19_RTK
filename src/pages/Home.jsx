@@ -1,8 +1,11 @@
 // import { useAuth } from "../hooks/useAuth";
+import { useGetMeQuery } from "../features/user/userApi";
 import Dashboard from "./Dashboard";
 
 export default function Home() {
   //   const { user } = useAuth();
+  const { data: user } = useGetMeQuery();
+  console.log(user);
   return (
     <div>
       <Dashboard />

@@ -14,11 +14,25 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const resetForm = () => {
-    setUsername("");
-    setPassword("");
-    setError("");
-  };
+  useEffect(() => {
+    const resetForm = () => {
+      setUsername("");
+      setPassword("");
+      setError("");
+    };
+    if (isSuccess && !isError && !error && !loginError && data?.token) {
+      console.log("data", data);
+      toast.success("Login successful!");
+      navigate("/");
+    } else if (isError) {
+      console.log("error", loginError);
+      const errorMessage =
+        loginError?.data?.message || "Login failed. Please try again.";
+      setError(errorMessage);
+      toast.error(errorMessage);
+      resetForm();
+    }
+  }, [isSuccess, isError, navigate, data, loginError, error]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,25 +43,9 @@ export default function Login() {
       login({ username, password });
     }
   };
-  useEffect(() => {
-    if (isSuccess) {
-      console.log("data", data);
-      toast.success("Login successful!");
-      navigate("/");
-    } else if (isError) {
-      console.log("error", loginError);
-      const errorMessage =
-        loginError?.data?.message || "Login failed. Please try again.";
-      toast.error(errorMessage);
-      resetForm();
-    }
-  }, [isSuccess, isError, navigate, data, loginError]);
 
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-white-500">
-      {error && <p className="text-red-500">{error}</p>}
-      {isError && <p className="text-red-500">{loginError.data.message}</p>}
-      {isLoading && <p className="text-blue-500">Loading...</p>}
       <div className="flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
@@ -81,6 +79,11 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             // required
           />
+          <div className="mb-4 text-center text-sm text-red-500 font-normal flex justify-center items-center gap-2">
+            {error && <p className="text-red-500">{error}</p>}
+            {isError && <p className="text-red-500">{loginError.data.message}</p>}
+            {isLoading && <p className="text-blue-500">Loading...</p>}
+          </div>
           <button
             className="w-full bg-blue-500 text-white py-2 rounded cursor-pointer"
             disabled={isLoading}
